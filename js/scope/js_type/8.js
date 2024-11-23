@@ -12,3 +12,7 @@ console.log(typeof undefined);
 // null 是bug  function是函数类型 不是js的类型 
 console.log(typeof null);
 console.log(typeof function () { });
+
+let bigInt1 = 123456789012345678901234567890n;
+let bigInt2 = BigInt(123456789012345678901234567890);
+console.log(typeof bigInt1)
