@@ -1,5 +1,5 @@
 {
-  "name": "summarize",
+  "name": "demo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "openai": "^4.73.0"
-  }
+  "description": ""
 }
