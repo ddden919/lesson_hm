@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        /* 1 */
+        p {
+            color: blue !important;
+        }
+/* !important 优先级最高 */
+        /* 11 */
+        .container p {
+            color: red;
+        }
+
+        /* 101 */
+        #main p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- attribute 属性 -->
+    <div id="main" class="container">
+        <p style="color: pink;">这是一段爱情故事</p>
+        <!-- 行内样式1000 -->
+
+    </div>
+</body>
+
+</html>

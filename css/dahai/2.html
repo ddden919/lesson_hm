@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+    <style>
+        /* 相邻兄弟选择器 (连着) 选择紧接在另一个元素后的元素。*/
+        h1+p {
+            color: red;
+        }
+
+        /* 普通兄弟选择器 选择前面有某元素的所有兄弟元素。*/
+        h1~p {
+            color: blue;
+        }
+
+        /* 子元素选择器 选择作为某元素直接子元素的元素。*/
+        .container>p {
+            font-weight: bold;
+        }
+
+        /* 后代元素选择器 选择作为某元素后代元素的元素。*/
+        .container p {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>标题</h1>
+        <p>这是第一段文字</p>
+        <p>这是第二段文字</p>
+        <a href="">链接</a>
+        <span>这是一个span元素</span>
+        <div class="inner">
+            <p>这是一个内部的段落</p>
+        </div>
+    </div>
+</body>
+
+</html>

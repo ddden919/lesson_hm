@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 只有当 <p> 元素正好是其父元素的第三个子元素时，才会被选中。第三个孩子不是p所以不生效 */
+    /* 如果是:nth-child(3) 那么第三个子元素会被选中 */
+    .container p:nth-child(3) {
+        background-color: yellow;
+        color: black;
+    }
+
+    /* 选择作为其父元素的第n个特定类型的子元素 */
+    .container p:nth-of-type(3) {
+        background-color: lightblue;
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>nt-child vs nth-of-type 例子</h1>
+        <p>这是第一个段落</p>
+        <div>这是一个div</div>
+        <p>这是第二个段落</p>
+        <p>这是第三个段落</p>
+        <div>这是第二个div</div>
+    </div>
+</body>
+
+</html>
