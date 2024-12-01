@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "liufan",
+            "hometown": "beijing"
+        },
+        {
+            "id": 2,
+            "name": "xvchao",
+            "hometown": "shanghai"
+        },
+        {
+            "id": 3,
+            "name": "xiaoming",
+            "hometown": "guangzhou"
+        }
+    ]
+}
