@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "小明"
+    },
+    {
+      "id": "2",
+      "name": "小红"
+    },
+    {
+      "id": "3",
+      "name": "小军"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "学习Apifox",
+      "content": "hello world !",
+      "userId": 1
+    }
+  ]
+}
