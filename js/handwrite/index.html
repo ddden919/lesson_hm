@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = {
+            name: 'Cherry',
+            fn: function (a, b) {
+                console.log(this.name)
+                console.log(a + b)
+            }
+        }
+
+        var b = a.fn;
+        // 指定this
+        // 立即执行
+        // 参数
+        console.log(b.apply(a, [1, 2]))
+        // call apply 区别
+        // apply 参数 一次性给 以数组形式  apply(thisBinder,[a,b,c,...参数])
+        // call 参数 一个一个给 call(thisBinder,a,b,c,...参数)
+        // a [1, 2] + undefined
+        // + 两边都是数字就是加法，如果不是呢？ 连接运算符 字符串拼接
+        // toString 隐式转换 String(undefined)包装函数 强制转换
+        console.log(b.call(a, [1, 2]))
+        console.log(b.call(a, 1, 2))
+        console.log(b.bind(a, 1, 2))
+        console.log(b.bind(a, 1, 2)())
+    </script>
+</body>
+
+</html>
