@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 75px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem</title>
+    <script>
+        // script标签  异步加载  会阻塞页面渲染  来动态设置 html的font-size
+        // 立即执行函数  解决rem适配问题
+        (function () {
+            function calc() {
+                const w = document.documentElement.clientWidth;
+                // console.log(w)
+                // document.documentElement.style.fontSize = 75 * (w / 750) + 'px'; 
+                document.documentElement.style.fontSize = w / 10 + 'px';
+            }
+            calc()
+            // 监听窗口变化  重新计算rem的大小
+            window.onresize = function () {
+                // console.log("窗口变化了")
+                calc()
+            }
+        })()
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="width: 10rem; height: 2rem; background-color: red;"></div>
+        <div style="font-size: 0;">
+            <!-- 为什么蓝色盒子下降了？ -->
+            <!-- 这是因为两个inline-block元素默认按照基线（baseline）对齐，而绿色盒子中包含的文本“111”会占用一定的空间，使得绿色盒子的基线低于其底部边缘。因此，当两个盒子按基线对齐时，蓝色盒子看起来像是下降了，实际上它是根据绿色盒子的内容基线来调整自己的位置。 -->
+            <div
+                style="width: 5rem; height: 2rem; background-color: green; display: inline-block; font-size: 20px; color: white; vertical-align: top;">
+                111</div>
+            <div style="width: 5rem; height: 2rem; background-color: blue; display: inline-block; vertical-align: top;">222</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
