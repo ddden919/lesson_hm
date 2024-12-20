@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vue 3 不是本地,通过cdn引入内容分发网络 -->
+    <!-- 静态资源(html,css,js,图片,视频等) 动态资源(java,node,数据库 服务器集群) -->
+    <!-- cdn 快速内容访问和发布的机制 -->
+    <!-- CDN是Content Delivery Network的缩写，即内容分发网络。它是一个由分布在不同地理位置的服务器组成的网络，用于加速网页内容（如HTML、CSS、JavaScript、图像、视频等）的传输和分发。CDN的工作原理是将内容缓存到离用户较近的服务器上，当用户请求这些内容时，CDN会从离用户最近的服务器上提供内容，从而减少内容传输的延迟，提高用户访问速度和体验。
+        
+        在你的代码中，你通过CDN引入了Vue 3的库文件，这样用户在访问你的网页时，浏览器可以从CDN服务器上快速加载Vue 3的库文件，而不需要从你的服务器上下载，从而加快网页的加载速度。 -->
+    <script src="vue.js"></script>
+
+</head>
+
+<body>
+    <!-- vue 3工作的挂载点接管前端 -->
+    <!-- LLM -->
+    <div id="root">
+        <!-- Vue应用的工作领地 -->
+        <h1>{{str}} 走向{{LLM}} 智能前端！</h1>
+        <p>Count: {{count}}</p>
+        <button @click="increment">+1</button>
+    </div>
+    <script type="module">
+        // console.log('hello, vue')
+        const {
+            createApp, // 创建Vue应用
+            ref  // 创建响应式数据
+        } = Vue
+
+        createApp({
+            // 准备应用需要的数据
+            setup() {
+                const count = ref(0);  // 响应式对象
+                // console.log(Object.prototype.toString.call(count))
+                const str = ref("hello vue")
+                const increment = () => {
+                    // console.log('---------------')
+                    count.value++;
+                }
+                return {
+                    LLM: 'Llama3',
+                    count,
+                    str,
+                    increment
+                }
+            }
+        }).mount('#root') // 挂载点
+    </script>
+</body>
+
+</html>
