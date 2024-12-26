@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 更关注于业务(数据 + 配套语法)</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{ title }}</h2>
+        <input type="text" id="tobo-input" v-model="title">
+        
+    </div>
+    <script>
+        const app = {
+            data() {
+                return {
+                    title: ""
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app")
+    </script>
+</body>
+
+</html>
