@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式API</title>
+</head>
+
+<body>
+    <div id="container">1</div>
+    <div id="count">2</div>
+    <button id="button">点击加1</button>
+    <button id="btn">点击*2</button>
+    <script>
+        // JSON对象
+        var obj = {
+            value: 1, // count
+            count: 2 // 对象
+        }
+        let value = 1;
+        let count = 2; // 数据
+        // 拦截器 修改值之前
+        // 属性定义 定义一下
+        Object.defineProperty(obj, 'value', {
+            // get() {
+            //     return this.value;
+            // },
+            // set(newValue) {
+            //     // 每次修改值之前，将新值乘以2
+            //     this.value = newValue * 2;
+            // }
+            get: function () {
+                console.log('读了value属性');
+                return value; // 原来的职责 数据改变了
+            },
+            set: function (newValue) {
+                value = newValue; // 原来的职责
+                document.getElementById('container').innerText = newValue;
+                console.log('写了value属性');
+            }
+        })
+        Object.defineProperty(obj, 'count', {
+            get: function () {
+                console.log('读了count属性');
+                return count; // 原来的职责
+            },
+            set: function (newValue) {
+                count = newValue; // 原来的职责
+                document.getElementById('container').innerText = newValue;
+                console.log('写了value属性');
+            }
+        })
+        // 为按钮添加点击事件监听器
+        document.getElementById('button').addEventListener('click', function () {
+            // 每次点击时，将obj对象的value属性值加1
+            obj.value++;
+            // 调用render函数，更新页面显示
+            // render(obj);
+        })
+        document.getElementById('btn').addEventListener('click', function () {
+            // 每次点击时，将obj对象的value属性值加1
+            obj.count *= 2;
+        })
+        /**
+         * 渲染函数，用于更新页面上的数字显示
+         * @param {Object} obj - 包含value属性的对象
+         */
+        // function render(obj) {
+        //     // 获取id为container的元素，并将其内容更新为obj对象的value属性值
+        //     document.getElementById('container').innerText = obj.value;
+        // }
+    </script>
+</body>
+
+</html>
