@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档碎片</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        const container = document.getElementById('container');
+        const fragment = document.createDocumentFragment();// 创建一个文档碎片
+
+        for (let i = 0; i < 100; i++) {
+            let div = document.createElement('div'); // 内存中创建一个div元素
+            div.textContent = `Item ${i + 1}`
+            // container.appendChild(div);
+            fragment.appendChild(div); // 把div元素添加到文档碎片中
+        }
+        container.appendChild(fragment); // 把文档碎片添加到页面中 v8 -> 渲染只做了一次
+    </script>
+</body>
+
+</html>
