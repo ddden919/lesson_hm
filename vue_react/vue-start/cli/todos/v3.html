@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组合式API</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>
+            {{title}}
+            <input type="text" v-model="title">
+        </h2>
+        <h1 @click="add">{{state.count}} * 2 = {{double}}</h1>
+    </div>
+    <script>
+        // 组合式API 取代选项式API
+        const { ref, computed } = Vue
+        let App = {
+            setup() {
+                let title = ref("todos")
+                let state = ref({
+                    count: 0
+                })
+                const double = computed(() => {
+                    return state.value.count * 2
+                })
+                function add() {
+                    state.value.count++
+                }
+                return {
+                    state,
+                    double,
+                    add,
+                    title
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>
