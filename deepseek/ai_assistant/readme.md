@@ -19,6 +19,15 @@
 - python flask 框架 node koa
 - 纯js
 - deepseek 在线api
+{
+    "model":"deepseek-chat",
+    "messages": [
+        {
+            "role": "user",
+            "content":"hello"
+        }
+    ]
+}
 
 ## 写文章 + leetcode 150+
 
@@ -50,6 +59,7 @@
   - 2XX 请求成功 201 Created
   - 3XX 重定向
   - 4XX 客户端错误
+    405 Method Not Allowed 方法不允许
   - 5XX 服务器错误
 
   响应头第一个数据包 浏览器或程序 就通过状态码
@@ -57,6 +67,39 @@
   程序逻辑的一部分
 
 - env 环境变量
+
+## 界面
+
+- html 结构
+  - 写注释
+  - 图标字体库 font-awesome iconfont
+    - 性能优化
+    - 小图标都用图片的，http请求数的暴涨，网页同时并发请求数是有上限的
+    - 下载一个图标字体文件
+    - fas fa-comment-alt 图标
+    - font-awesome 不支持选择，都是一样的
+  - css 样式的组合 面向对象特性 多态 方便复用和维护
+    tailwindcss 原子类
+  - textarea LLM 支持比较多的tokens 出入长度 kimi deepseek
+  - 语义化标签
+  - CSS 布局
+    - 弹性布局
+      - 居中
+      - align-items 交叉轴
+      - justify-content 主轴 flex-start/center/end/space-between/space-around
+      - flex-direction 方向：row/column
+      - flex-wrap 换行
+    - grid 网格布局
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap 24px
+    - 响应式布局
+      width + max-width
+      @media screen and (max-width: 768px) {
+        
+      }
+    - transition animation
+      - width transition ipad 旋转屏幕
 
 
   
