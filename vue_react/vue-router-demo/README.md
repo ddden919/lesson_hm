@@ -19,3 +19,30 @@
   - index.js 入口配置文件
   - router-link 是 vue-router 提供的组件，use(router)不用引入就可以生效
   - router-view 是路由对应的组件显示到相应位置
+
+- 业务熟练度
+  - vue-router 语法细节
+    - routes 拆分 亮点
+      [
+        /
+        /About 顶级路径，
+        ...users // 用户模块
+        ...posts // 文章模块
+      ]
+      展开运算符
+    - path,component
+      - name 有用
+      - props
+
+- 路由历史记录 history
+  router-link 而不是a标签 router-view实现的是组
+  router.push() 入栈
+  栈顶是当前的路由，显示相应的组件
+  前进后退
+  导航 = url + history navigatior
+
+- 实战开发
+  - stylus
+    加速css开发 
+    npm i -D stylus 当前项目安装stylus 包
+    省略{} :; 用tab 缩进
